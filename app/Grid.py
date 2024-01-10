@@ -11,7 +11,23 @@ class Grid:
         self.set_headers()
     
     def set_headers(self):
-        self.headers = ["Игрок", "Удары", "Голы", "Пасы"]
+        self.headers = ["Игрок", 
+                        "Голы", 
+                        "Ассисты", 
+                        "Уд. в створ", 
+                        "Уд. мимо", 
+                        "Уд. заблок",  
+                        "Потери", 
+                        "Перехваты", 
+                        "Отборы",
+                        "Фолы",
+                        "Фолы с.",
+                        "ЖК",
+                        "КК",
+                        "Угловые",
+                        "Пасы",
+                        "Сейвы(вратарь)",
+                        ]
 
     def get_headers(self):
         return self.headers
@@ -31,6 +47,10 @@ class Grid:
             label.grid(row=i+1, column=0)
 
             for j in range(1, len(self.get_headers())):
-                entry = Entry(self.window)
+                header = self.get_headers()[j]
+                width = len(header)
+                if width < 5:
+                    width = 5
+                entry = Entry(self.window, width=width)
                 entry.grid(row=i+1, column=j)
 

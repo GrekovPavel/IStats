@@ -25,7 +25,7 @@ class Command:
         label.pack()   
 
         self.entryes.clear()
-        for i in range(9):
+        for i in range(18):
             entry = ttk.Entry(command_window)
             entry.pack(pady=3)
             self.entryes.append(entry)
